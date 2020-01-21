@@ -13,14 +13,19 @@
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  <script src="js/scripts.js"></script>
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/bf7e05c402.js" crossorigin="anonymous"></script>
+  <!-- Progress Bar -->
+  <script src="js/progressbar.min.js"></script>
+  <!-- Parallax -->
+  <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
 </head>
 <body>
   <header>
     <div class="container" id="nav-container">
       <nav class="navbar navbar-expand-lg">
-        <a class="navbar-brand" href="#">
-          <img id="logo" src="img/hdcagency_logo.svg" alt="hDC Agency">
+        <a class="navbar-brand" href="index.html">
+          <img id="logo" src="img/hdcagency_logo.svg" alt="hDC Agency"> hDC Agency
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-links" aria-controls="navbar-links" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -79,10 +84,219 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
+      <!-- Sobre a empresa -->
+      <div id="about-area">
+        <div class="container">
+            <div class="row">
+              <div class="col-12"> 
+                <h3 class="main-title">Sobre a hDC Agency</h3>
+              </div>
+              <div class="col-md-6">
+                <img class="img-fluid" src="img/agencia.jpg" alt="Agência hDC">
+              </div>
+              <div class="col-md-6">
+                <h3 class="about-title">Uma agência que pensa no futuro</h3>
+                <p>Nossos projetos utilizam as melhores tecnologias para o seu negócio.</p>
+                <p>Após a especificação do projetos os arquitetos de software vão ver o que faz mais sentido para sua realidade.</p>
+                <p>E nossos designers vão trabalhar no layout e no UI/UX.</p>
+                <p>Veja outras vantagens:</p>
+                <ul id="about-list">
+                  <li><i class="fas fa-check"></i> Utilização de Machine Learning / AI</li>
+                  <li><i class="fas fa-check"></i> Layout responsivo para todos os dispositivos</li>
+                  <li><i class="fas fa-check"></i> Integração com diversos sistemas do mercado</li>
+                  <li><i class="fas fa-check"></i> Sistema de pagamento próprio</li>
+                  <li><i class="fas fa-check"></i> Desenvolvimento com metodologia ágil</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+      </div>
+      <!-- Serviços da empresa -->
+      <div id="services-area">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+                <h3 class="main-title">Nossas especialidades</h3>
+            </div>
+            <div class="col-md-4 service-box">
+              <i class="fas fa-mobile-alt"></i>
+              <h4>Aplicativos Nativos</h4>
+              <p>Utilizamos todo o dos dispositivos móveis construindo aplicativos nativos.</p>
+            </div>
+            <div class="col-md-4 service-box">
+              <i class="fas fa-shopping-cart"></i>
+              <h4>E-commerces</h4>
+              <p>Temos uma plataforma própria de e-commerce que se adapta a qualquer regra de negócio (B2C e B2B).</p>
+            </div>
+            <div class="col-md-4 service-box">
+              <i class="fas fa-paint-brush"></i>
+              <h4>Design Criativo</h4>
+              <p>Nossos designers são especializados em UI/UX e também possuem vasta experiência no mercado de software.</p>
+            </div>
+            <div class="col-md-4 service-box">
+              <i class="fab fa-google"></i>
+              <h4>Experts em SEO</h4>
+              <p>Com nosso serviço de marketing, com certeza seu site será bem posicionado no Google.</p>
+            </div>
+            <div class="col-md-4 service-box">
+              <i class="fas fa-hands-helping"></i>
+              <h4>Suporte 24/7</h4>
+              <p>Você sempre terá alguem da equipe disponível para suporte, em diferentes meios de comunicação.</p>
+            </div>
+            <div class="col-md-4 service-box">
+              <i class="fas fa-server"></i>
+              <h4>Experiência em servidores</h4>
+              <p>Garantimos uptime e também rápido tempo de resposta.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Dados da empresa -->
+      <div id="data-area">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3 circle-box">
+              <div id="circleA"></div>
+              <p>Projetos entregues</p>
+            </div>
+            <div class="col-md-3 circle-box">
+              <div id="circleB"></div>
+              <p>Clientes Felizes</p>
+            </div>
+            <div class="col-md-3 circle-box">
+              <div id="circleC"></div>
+              <p>Colaboradores</p>
+            </div>  
+            <div class="col-md-3 circle-box">
+              <div id="circleD"></div>
+              <p>Cafézinhos</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Time -->
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h3 class="main-title">Nosso time</h3>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <img src="" class="card-img-top" alt="">
+              <div class="card-body">
+                <h5 class="card-title">Nome</h5>
+                <p class="card-text">Software Developer.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <img src="" class="card-img-top" alt="">
+              <div class="card-body">
+                <h5 class="card-title">Nome</h5>
+                <p class="card-text">Software Developer.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Nome</h5>
+                <p class="card-text">Software Developer.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Nome</h5>
+                <p class="card-text">Software Developer.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Newsletter -->
+      <div class="container">
+        <div class="col-md-12">
+          <h3 class="main-title">Fique por dentro das novidades</h3>
+        </div>
+        <p>Assine nossa lista de e-mails, e receba nossos conteúdos sobre desenvolvimento de software</p>
+        <form action="">
+          <input type="text" name="email" placeholder="Seu melhor e-mail">
+          <input type="submit" value="Inscrever">
+        </form>
+      </div>
+      <!-- Portfólio -->
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h3 class="main-title">Conheça nossos projetos</h3>
+          </div>
+          <div class="col-md-12">
+            <button>Todos</button>
+            <button>Desenvolvimento</button>
+            <button>Design</button>
+            <button>SEO</button>
+          </div>
+          <div class="col-md-4">
+            img
+          </div>
+          <div class="col-md-4">
+            img
+          </div>
+          <div class="col-md-4">
+            img
+          </div>
+          <div class="col-md-4">
+            img
+          </div>
+          <div class="col-md-4">
+            img
+          </div>
+          <div class="col-md-4">
+            img
+          </div>
+        </div>
+      </div>
+      <!-- Call to Action -->
+      <div class="container">
+        <div class="row">
+          <p>Deseja fazer um orçamento sem compromisso?</p>
+          <a href="#">Clique aqui!</a>
+        </div>
+      </div>
     </div>
   </main>
+  <!-- Rodapé -->
   <footer>
-
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h3>Entre em contato conosco</h3>
+        </div>
+        <div class="col-md-4">
+          <p>icon</p>
+          <p>Ligue para: (48)99999-9999</p>
+          <p>Horários: 8:00 - 19:00</p>
+        </div>
+        <div class="col-md-4">
+          <p>icon</p>
+          <p>Envie um email: contato@hdcagency.com.br</p>
+        </div>
+        <div class="col-md-4">
+          <p>icon</p>
+          <p>Venha tomar um café: Rua Lorem Ipsum - 1314</p>
+        </div>
+        <div class="col-md-12">
+          <p>Desenvolvido por hDC Agency</p>
+        </div>
+      </div>
+    </div>
   </footer>
+  <!-- Scripts do projeto -->
+  <script src="js/scripts.js"></script>
 </body>
 </html>
