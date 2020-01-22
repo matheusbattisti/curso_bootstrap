@@ -21,8 +21,6 @@ $( document ).ready(function() {
 
   });
 
-  circleA.animate(1.0);
-
   let containerB = document.getElementById("circleB");
 
   let circleB = new ProgressBar.Circle(containerB, {
@@ -42,8 +40,6 @@ $( document ).ready(function() {
     }
 
   });
-
-  circleB.animate(1.0);
 
   let containerC = document.getElementById("circleC");
 
@@ -65,8 +61,6 @@ $( document ).ready(function() {
 
   });
 
-  circleC.animate(1.0);
-
   let containerD = document.getElementById("circleD");
 
   let circleD = new ProgressBar.Circle(containerD, {
@@ -87,9 +81,23 @@ $( document ).ready(function() {
 
   });
 
-  circleD.animate(1.0);
+  // iniciando loaders quando a usuário chegar no elemento
+  let dataAreaOffset = $('#data-area').offset();
+
+  $(window).scroll(function (e) {
+
+    let scroll = $(window).scrollTop();
+
+    if(scroll > (dataAreaOffset.top - 500)) {
+      circleA.animate(1.0);
+      circleB.animate(1.0);
+      circleC.animate(1.0);
+      circleD.animate(1.0);
+    }
+  });
 
   // Parallax
   $('#data-area').parallax({imageSrc: 'img/cidadeparallax.png'});
+  $('#pattern-img').parallax({imageSrc: 'img/pattern.png'});
 
 });

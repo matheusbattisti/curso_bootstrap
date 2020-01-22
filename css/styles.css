@@ -78,7 +78,7 @@ header, .navbar {
   color: #FFF;
 }
 
-.btn-slider {
+.main-btn {
   background-color: #65DAF9;
   color: #FFF;
   text-transform: uppercase;
@@ -90,7 +90,7 @@ header, .navbar {
   transition: .5s;
 }
 
-.btn-slider:hover {
+.main-btn:hover {
   text-decoration: none;
   color: #FFF;
   background-color: transparent;
@@ -186,4 +186,39 @@ header, .navbar {
   text-align: center;
   font-size: 26px;
   margin-top: 20px;
+}
+
+/* Time */
+
+.card-body {
+  text-align: center;
+}
+
+/* Trabalhe conosco */
+
+#apply-area {
+  height: 500px;
+}
+
+#apply-area .container-fluid, #apply-area .row {
+  height: 100%;
+}
+
+#apply-area .apply-box {
+  padding: 70px 0;
+  text-align: center;
+}
+
+#company-img {
+  background-image: url('../img/empresa.jpg');
+  background-size: cover;
+  height: 100%;
+}
+
+#pattern-img {
+  padding-top: 250px;
+}
+
+#pattern-img h4, #pattern-img p {
+  color: #FFF;
 }
