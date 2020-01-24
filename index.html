@@ -9,8 +9,11 @@
   <!-- Estilos -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="css/styles.css">
-  <!-- Scripts -->
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <!-- Scripts (jQuery não pode ser o slim que vem do Boostrap) -->
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   <!-- Font Awesome -->
@@ -23,7 +26,7 @@
 <body>
   <header>
     <div class="container" id="nav-container">
-      <nav class="navbar navbar-expand-lg">
+      <nav class="navbar navbar-expand-lg fixed-top">
         <a class="navbar-brand" href="index.html">
           <img id="logo" src="img/hdcagency_logo.svg" alt="hDC Agency"> hDC Agency
         </a>
@@ -32,9 +35,12 @@
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbar-links">
           <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="#">Home</span></a>
-            <a class="nav-item nav-link" href="#">Projetos</a>
-            <a class="nav-item nav-link" href="#">Contato</a>
+            <a class="nav-item nav-link" id="home-menu" href="#">Home</span></a>
+            <a class="nav-item nav-link" id="about-menu" href="#">A agência</a>
+            <a class="nav-item nav-link" id="services-menu" href="#">Serviços</a>
+            <a class="nav-item nav-link" id="team-menu" href="#">Time</a>
+            <a class="nav-item nav-link" id="portfolio-menu" href="#">Projetos</a>
+            <a class="nav-item nav-link" id="contact-menu" href="#">Contato</a>
           </div>
         </div>
       </nav>
@@ -96,10 +102,10 @@
               </div>
               <div class="col-md-6">
                 <h3 class="about-title">Uma agência que pensa no futuro</h3>
-                <p>Nossos projetos utilizam as melhores tecnologias para o seu negócio.</p>
-                <p>Após a especificação do projetos os arquitetos de software vão ver o que faz mais sentido para sua realidade.</p>
-                <p>E nossos designers vão trabalhar no layout e no UI/UX.</p>
-                <p>Veja outras vantagens:</p>
+                <p>Nossos projetos são adaptados ao cliente e seu propósito.</p>
+                <p>Após a especificação do projetos os arquitetos de software definirão as melhores tecnologias para seu projeto.</p>
+                <p>E nossos designers trabalharão na sua interface/layout para impulsionar o negócio.</p>
+                <p>Veja outros diferenciais:</p>
                 <ul id="about-list">
                   <li><i class="fas fa-check"></i> Utilização de Machine Learning / AI</li>
                   <li><i class="fas fa-check"></i> Layout responsivo para todos os dispositivos</li>
@@ -121,7 +127,7 @@
             <div class="col-md-4 service-box">
               <i class="fas fa-mobile-alt"></i>
               <h4>Aplicativos Nativos</h4>
-              <p>Utilizamos todo o dos dispositivos móveis construindo aplicativos nativos.</p>
+              <p>Utilizamos o real poder dos dispositivos móveis construindo aplicativos nativos.</p>
             </div>
             <div class="col-md-4 service-box">
               <i class="fas fa-shopping-cart"></i>
@@ -136,17 +142,17 @@
             <div class="col-md-4 service-box">
               <i class="fab fa-google"></i>
               <h4>Experts em SEO</h4>
-              <p>Com nosso serviço de marketing, com certeza seu site será bem posicionado no Google.</p>
+              <p>Com nosso serviço de marketing seu site será melhor posicionado no Google e venderá mais.</p>
             </div>
             <div class="col-md-4 service-box">
               <i class="fas fa-hands-helping"></i>
               <h4>Suporte 24/7</h4>
-              <p>Você sempre terá alguem da equipe disponível para suporte, em diferentes meios de comunicação.</p>
+              <p>Você sempre terá alguem da equipe disponível para suporte, em diferentes plataformas. (chat, email, skype)</p>
             </div>
             <div class="col-md-4 service-box">
               <i class="fas fa-server"></i>
               <h4>Experiência em servidores</h4>
-              <p>Garantimos uptime e também rápido tempo de resposta.</p>
+              <p>Garantimos uptime e também rápido tempo de resposta do seu site para o seu cliente.</p>
             </div>
           </div>
         </div>
@@ -175,44 +181,46 @@
         </div>
       </div>
       <!-- Time -->
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <h3 class="main-title">Nosso time</h3>
-          </div>
-          <div class="col-md-3">
-            <div class="card">
-              <img src="img/profile1.jpg" class="card-img-top" alt="Imagem de Perfil 1">
-              <div class="card-body">
-                <h5 class="card-title">Jhon Doe</h5>
-                <p class="card-text">Software Developer</p>
+      <div id="team-area">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <h3 class="main-title">Nosso time</h3>
+            </div>
+            <div class="col-md-3">
+              <div class="card">
+                <img src="img/profile1.jpg" class="card-img-top" alt="Imagem de Perfil 1">
+                <div class="card-body">
+                  <h5 class="card-title">Jhon Doe</h5>
+                  <p class="card-text">Software Developer</p>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col-md-3">
-            <div class="card">
-              <img src="img/profile2.jpg" class="card-img-top" alt="Imagem de Perfil 2">
-              <div class="card-body">
-                <h5 class="card-title">Maria Mariana</h5>
-                <p class="card-text">SEO Consultant</p>
+            <div class="col-md-3">
+              <div class="card">
+                <img src="img/profile2.jpg" class="card-img-top" alt="Imagem de Perfil 2">
+                <div class="card-body">
+                  <h5 class="card-title">Maria Mariana</h5>
+                  <p class="card-text">SEO Consultant</p>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col-md-3">
-            <div class="card">
-              <img src="img/profile3.jpg" class="card-img-top" alt="Imagem de Perfil 3">
-              <div class="card-body">
-                <h5 class="card-title">Paul Baker</h5>
-                <p class="card-text">Project Manager</p>
+            <div class="col-md-3">
+              <div class="card">
+                <img src="img/profile3.jpg" class="card-img-top" alt="Imagem de Perfil 3">
+                <div class="card-body">
+                  <h5 class="card-title">Paul Baker</h5>
+                  <p class="card-text">Project Manager</p>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col-md-3">
-            <div class="card">
-              <img src="img/profile4.jpg" class="card-img-top" alt="Imagem de Perfil 4">
-              <div class="card-body">
-                <h5 class="card-title">Karina Katarina</h5>
-                <p class="card-text">UX/UI Designer</p>
+            <div class="col-md-3">
+              <div class="card">
+                <img src="img/profile4.jpg" class="card-img-top" alt="Imagem de Perfil 4">
+                <div class="card-body">
+                  <h5 class="card-title">Karina Katarina</h5>
+                  <p class="card-text">UX/UI Designer</p>
+                </div>
               </div>
             </div>
           </div>
@@ -224,88 +232,114 @@
           <div class="row">
             <div class="col-md-6 apply-box" id="company-img"></div>
             <div class="col-md-6 apply-box" id="pattern-img">
-              <h4>Quer entrar para um time de ponta?</h4>
+              <h4>Gosta de desafios?</h4>
               <p>Temos várias posições abertas, entre elas: Software Engineer, UI/UX Designer, Project Manager e mais.</p>
               <p>Clique no botão abaixo e confira os benefícios e as posições em aberto.</p>
-              <a href="#" class="main-btn">Saiba Mais</a>
+              <p>Aqui você terá a chance de trabalhar com as melhores tecnologias e os profissionais mais capacitados.</p>
+              <a href="#" class="main-btn" id="apply-btn">Saiba Mais</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Portfólio -->
+      <div id="portfolio-area">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <h3 class="main-title">Conheça nossos projetos</h3>
+            </div>
+            <div class="col-md-12" id="filter-btn-box">
+              <button class="main-btn filter-btn active" id="all-btn">Todos</button>
+              <button class="main-btn filter-btn" id="dev-btn">Desenvolvimento</button>
+              <button class="main-btn filter-btn" id="dsg-btn">Design</button>
+              <button class="main-btn filter-btn" id="seo-btn">SEO</button>
+            </div>
+            <div class="col-md-4 project-box dev">
+              <img src="img/proj1.jpg" class="img-fluid" alt="Projeto 1">
+            </div>
+            <div class="col-md-4 project-box dsg">
+              <img src="img/proj2.jpg" class="img-fluid" alt="Projeto 2">
+            </div>
+            <div class="col-md-4 project-box seo">
+              <img src="img/proj3.jpg" class="img-fluid" alt="Projeto 3">
+            </div>
+            <div class="col-md-4 project-box dev">
+              <img src="img/proj4.jpg" class="img-fluid" alt="Projeto 4">
+            </div>
+            <div class="col-md-4 project-box dsg">
+              <img src="img/proj5.jpg" class="img-fluid" alt="Projeto 5">
+            </div>
+            <div class="col-md-4 project-box seo">
+              <img src="img/proj6.jpg" class="img-fluid" alt="Projeto 6">
             </div>
           </div>
         </div>
       </div>
       <!-- Newsletter -->
-      <div class="container">
-        <div class="col-md-12">
-          <h3 class="main-title">Fique por dentro das novidades</h3>
-        </div>
-        <p>Assine nossa lista de e-mails, e receba nossos conteúdos sobre desenvolvimento de software</p>
-        <form action="">
-          <input type="text" name="email" placeholder="Seu melhor e-mail">
-          <input type="submit" value="Inscrever">
-        </form>
-      </div>
-      <!-- Portfólio -->
-      <div class="container">
-        <div class="row">
+      <div id="news-area">
+        <div class="container">
           <div class="col-md-12">
-            <h3 class="main-title">Conheça nossos projetos</h3>
+            <h3 class="main-title">Fique por dentro das novidades</h3>
           </div>
-          <div class="col-md-12">
-            <button>Todos</button>
-            <button>Desenvolvimento</button>
-            <button>Design</button>
-            <button>SEO</button>
-          </div>
-          <div class="col-md-4">
-            img
-          </div>
-          <div class="col-md-4">
-            img
-          </div>
-          <div class="col-md-4">
-            img
-          </div>
-          <div class="col-md-4">
-            img
-          </div>
-          <div class="col-md-4">
-            img
-          </div>
-          <div class="col-md-4">
-            img
-          </div>
+          <p>Assine nossa lista de e-mails, e receba nossos conteúdos sobre desenvolvimento de software</p>
+          <form action="">
+            <input type="text" class="form-control" id="email-input" name="email" placeholder="Seu melhor e-mail">
+            <input type="submit" id="news-btn" value="Inscrever">
+          </form>
         </div>
       </div>
       <!-- Call to Action -->
-      <div class="container">
-        <div class="row">
-          <p>Deseja fazer um orçamento sem compromisso?</p>
-          <a href="#">Clique aqui!</a>
-        </div>
+      <div id="call-area">
+        <div class="container">
+            <div class="row">
+              <p>Deseja fazer um orçamento sem compromisso?</p>
+              <button class="main-btn" id="call-btn">Orçar</button>
+            </div>
+          </div>
       </div>
     </div>
   </main>
   <!-- Rodapé -->
   <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <h3>Entre em contato conosco</h3>
-        </div>
-        <div class="col-md-4">
-          <p>icon</p>
-          <p>Ligue para: (48)99999-9999</p>
-          <p>Horários: 8:00 - 19:00</p>
-        </div>
-        <div class="col-md-4">
-          <p>icon</p>
-          <p>Envie um email: contato@hdcagency.com.br</p>
-        </div>
-        <div class="col-md-4">
-          <p>icon</p>
-          <p>Venha tomar um café: Rua Lorem Ipsum - 1314</p>
-        </div>
-        <div class="col-md-12">
-          <p>Desenvolvido por hDC Agency</p>
+    <div id="contact-area">
+      <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <h3 class="main-title">Entre em contato conosco</h3>
+            </div>
+            <div class="col-md-4 contact-box">
+              <i class="fas fa-phone"></i>
+              <p><span class="contact-tile">Ligue para:</span> (48)99999-9999</p>
+              <p><span class="contact-tile">Horários:</span> 8:00 - 19:00</p>
+            </div>
+            <div class="col-md-4 contact-box">
+              <i class="fas fa-envelope"></i>
+              <p><span class="contact-tile">Envie um email:</span> contato@hdcagency.com.br</p>
+            </div>
+            <div class="col-md-4 contact-box">
+              <i class="fas fa-map-marker-alt"></i>
+              <p><span class="contact-tile">Venha tomar um café:</span> Rua Lorem Ipsum - 1314</p>
+            </div>
+            <div class="col-md-6" id="msg-box">
+              <p>Ou nos deixe uma mensagem:</p>
+            </div>
+            <div class="col-md-6" id="contact-form">
+              <form action="">
+                <input type="text" class="form-control" placeholder="E-mail" name="email">
+                <input type="text" class="form-control" placeholder="Assunto" name="subject">
+                <textarea class="form-control" rows="3" placeholder="Sua mensagem..." name="message"></textarea>
+                <input type="submit" class="main-btn">
+              </form>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div id="copy-area">
+      <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+              <p>Desenvolvido por <a href="https://www.horadecodar.com.br" target="_blank">hDC Agency</a> &copy; 2020</p>
+            </div>
         </div>
       </div>
     </div>
